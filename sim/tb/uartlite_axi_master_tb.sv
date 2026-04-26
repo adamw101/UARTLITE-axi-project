@@ -156,6 +156,7 @@ module uartlite_axi_master_tb#(
         //generate uart signal as long as input file is not empty
         while (! $feof(file_in1)) begin
             status1 = $fscanf(file_in1," %d,",data_byte1);
+            assert (status1 == 1) else $fatal("CSV read error");
             $display("status: %d",status1);
             transmit_data_to_uart(data_byte1,uart_period,uart_tx_tb);
             
@@ -172,6 +173,7 @@ module uartlite_axi_master_tb#(
         $display("Start sending data from uart");
         while (! $feof(file_in2)) begin
             status2 = $fscanf(file_in2," %d,",data_byte2);
+            assert (status2 == 1) else $fatal("CSV read error");
             $display("status: %d, data byte: %d",status2,data_byte2);
             transmit_data_from_uart(data_byte2,clk_period,tx_data_to_send_tb,tx_int_tb);
            
