@@ -1,0 +1,35 @@
+# Vivado project generated
+vivado_build/
+.Xil/
+
+# Vivado logs
+*.log
+*.jou
+*.str
+
+# Simulation files
+.sim/
+*.wdb
+*.pb
+*.vcd
+
+# Runs / cache
+.cache/
+.runs/
+.hw/
+.ip_user_files/
+
+# Generated outputs
+*.bit
+*.bin
+*.dcp
+*.xsa
+
+# Temporary / misc
+*.tmp
+*.backup
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
